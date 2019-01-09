@@ -1,0 +1,14 @@
+in step0, just download spring boot project.
+
+when access the url in localhost,
+1st request: the url you enter, show status 302,
+2nd request: login page, show 200,
+3rd request: bootstrap.min.css
+4th request: signin.css
+
+after you login
+1st request: login page, show 302
+2nd request: the url you enter in first step.
+
+in step2, the only difference is after you login,
+the 2nd request and 3rd ... are download angular resources.
