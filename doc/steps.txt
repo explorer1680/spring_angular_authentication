@@ -12,3 +12,18 @@ after you login
 
 in step1, the only difference is after you login,
 the 2nd request and 3rd ... are download angular resources.
+
+
+
+
+
+
+for project studio-manager,
+if you setup using form or basic authentication, the page can be loaded correctly, but, if you don't setup any of them, the follwing error happens:
+Description The origin server did not find a current representation for the target resource or is not willing to disclose that one exists.
+Actually, this is because the server not configured well without any of them:
+
+Configuration problem: No AuthenticationEntryPoint could be established. Please make sure you have a login mechanism configured through the namespace (such as form-login) or specify a custom AuthenticationEntryPoint with the 'entry-point-ref' attribute
+
+
+https://www.javaworld.com/article/2072850/java-security/j2ee-security--container-versus-custom.html
