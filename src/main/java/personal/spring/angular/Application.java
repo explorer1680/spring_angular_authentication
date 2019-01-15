@@ -3,6 +3,7 @@ package personal.spring.angular;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -18,7 +19,7 @@ import java.util.UUID;
 
 @SpringBootApplication
 @RestController
-public class Application {
+public class Application extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
@@ -33,7 +34,7 @@ public class Application {
         .httpBasic()
         .and()
         .authorizeRequests()
-        .antMatchers("/index.html", "/", "/home", "/login").permitAll()
+        .antMatchers("/index.html", "/", "/home", "*.js", "/*.js", "/login").permitAll()
         .anyRequest().authenticated()
         .and().csrf()
         .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
